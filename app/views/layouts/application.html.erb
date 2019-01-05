@@ -11,13 +11,14 @@
 
   <body>
     <div class="flash">
-      <% flash.each do |k, v| %>
-        <div>
-          <strong><%= t "flash.#{k}" %>: </strong>
-          <%= v %>
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <strong><%= t "flash.#{key}" %>: </strong>
+          <%= value %>
         </div>
       <% end %>
     </div>
+
     <div id="main-container" class="container">
       <div class="row">
         <div class="col-xs-9">

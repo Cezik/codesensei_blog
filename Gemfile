@@ -35,6 +35,7 @@ gem 'rails-ujs', '~> 0.1.0'
 gem 'autoprefixer-rails'
 
 gem 'bootstrap-sass', '3.4.0'
+gem 'simple_form'
 # gem 'jquery-rails', '4.3.1'
 
 group :development, :test do
