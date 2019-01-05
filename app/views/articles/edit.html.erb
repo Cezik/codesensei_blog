@@ -1,0 +1,6 @@
+<h1><%= @article.title  %></h1>
+
+<%= render partial: 'form', locals: { url: article_path(@article.id) } %>
+
+<br>
+<%= link_to t('articles.show.index_link'), articles_path %>

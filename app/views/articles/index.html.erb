@@ -1,0 +1,22 @@
+<table border="1">
+  <td>ID</td>
+  <td><%= t 'articles.index.title' %></td>
+  <td><%= t 'articles.index.date' %></td>
+  <td><%= t 'articles.index.update_date' %></td>
+  <td><%= t 'articles.index.text' %></td>
+  <td><%= t 'articles.index.edit_link' %></td>
+  <td><%= t 'articles.index.delete_link' %></td>
+  <% @article.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= link_to a.title, article_path(a.id) %></td>
+      <td><%= a.created_at %></td>
+      <td><%= a.updated_at %></td>
+      <td><%= excerpt(a.text, '', radius: 100) %></td>
+    <td><%= link_to t('articles.index.edit_link'), edit_article_path(a.id) %></td>
+  <td><%= link_to t('articles.index.delete_link'), article_path(a.id), method: :delete, data: {confirm: t('articles.index.delete_confirm')} %></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<%= link_to t('articles.index.new_link'), new_article_path %>

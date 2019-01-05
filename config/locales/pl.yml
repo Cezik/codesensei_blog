@@ -1,0 +1,49 @@
+pl:
+  flash:
+    success: Sukces
+    notice: Informacja
+    alert: Uwaga
+    error: Błąd
+  hello: "Witaj świecie"
+  foo:
+    bar: knajpa
+
+  articles:
+    new:
+      title: 'Dodaj nowy artykuł'
+    show:
+      index_link: Wróć do listy
+    index:
+      title: Tytuł
+      date: Data utworzenia
+      update_date: Data edycji
+      text: Fragment tekstu
+      new_link: Nowy artykuł
+      edit_link: Edytuj artykuł
+      delete_link: Usuń artykuł
+      delete_confirm: Czy na pewno usunąć?
+    create:
+      success: Artykuł został utworzony.
+      error: 'Nie można utworzyć artkułu: %{problems}'
+    update:
+      success: Artykuł został zmieniony.
+      error: 'Nie można zmienić artkułu: %{problems}'
+
+  helpers:
+    submit:
+      create: 'Utwórz %{model}'
+
+  activerecord:
+    models:
+      article: 'Artykuł'
+    errors:
+      models:
+        article:
+          attributes:
+            text:
+              cannot_contain_title: nie może zawierać tytułu artykułu
+
+    attributes:
+      article:
+        title: 'Tytuł artykułu'
+        text: 'Tekst artykułu'
