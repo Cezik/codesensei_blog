@@ -40,8 +40,11 @@ pl:
       models:
         article:
           attributes:
+            title:
+              blank: nie może być pusty
             text:
               cannot_contain_title: nie może zawierać tytułu artykułu
+              blank: nie może być pusty
 
     attributes:
       article:
