@@ -5,3 +5,23 @@
 </p>
 
 <%= link_to t('articles.show.index_link'), articles_path, class: 'btn btn-info'  %>
+
+<br/><br/><hr/>
+
+<%= simple_form_for @comment, url: article_comments_path(@article.id), wrapper: :horizontal_form do |f| %>
+  <%= f.input :commenter %>
+  <%= f.input :body %>
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.button :submit, class: 'btn-success' %>
+    </div>
+  </div>
+<% end %>
+
+<br/><br/><hr/>
+
+<% @article.comments.reject(&:new_record?).each do |comment| %>
+  <div>
+    <strong><%= comment.commenter %>:</strong> <%= comment.body %>
+  </div>
+<% end %>

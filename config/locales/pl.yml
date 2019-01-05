@@ -12,7 +12,7 @@ pl:
     new:
       title: 'Dodaj nowy artykuł'
     show:
-      index_link: Wróć do listy
+      index_link: 'Wróć do listy'
     index:
       title: Tytuł
       date: Data utworzenia
@@ -33,6 +33,10 @@ pl:
     submit:
       create: 'Utwórz %{model}'
 
+  comments:
+    create:
+      error: 'Nie można dodać komentarza: %{problems}'
+
   activerecord:
     models:
       article: 'Artykuł'
@@ -45,8 +49,10 @@ pl:
             text:
               cannot_contain_title: nie może zawierać tytułu artykułu
               blank: nie może być pusty
-
     attributes:
       article:
         title: 'Tytuł artykułu'
         text: 'Tekst artykułu'
+      comment:
+        commenter: 'Twój pseudonim:'
+        body: 'Komentarz:'

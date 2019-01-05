@@ -1,7 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body
+{
+  padding: 50px;
+}
+
 .info
 {
+  text-align: center;
   font-weight: bold;
 }
