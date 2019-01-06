@@ -27,7 +27,20 @@ pl:
       error: 'Nie można utworzyć artkułu: %{problems}'
     update:
       success: Artykuł został zmieniony.
-      error: 'Nie można zmienić artkułu: %{problems}'
+      error: 'Nie można zmienić artykułu: %{problems}'
+
+  comments:
+    index:
+      edit_link: Edytuj komentarz
+      delete_link: Usuń komentarz
+      delete_confirm: Czy na pewno usunąć komentarz?
+    create:
+      sucess: Komentarz zosał utworzony.
+      error: 'Nie można utworzyć komentarza: %{problems}'
+    update:
+      success: Komentarz został zmieniony.
+      error: 'Nie można zmienić komentarza: %{problems}'
+
 
   helpers:
     submit:
