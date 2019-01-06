@@ -29,7 +29,7 @@ pl:
       success: Artykuł został zmieniony.
       error: 'Nie można zmienić artykułu: %{problems}'
 
-  comment:
+  comments:
     index:
       edit_link: Edytuj komentarz
       delete_link: Usuń komentarz
