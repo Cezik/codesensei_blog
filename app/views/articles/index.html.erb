@@ -6,6 +6,7 @@
       <td><%= t 'articles.index.date' %></td>
       <td><%= t 'articles.index.update_date' %></td>
       <td><%= t 'articles.index.text' %></td>
+      <td><%= t 'articles.index.author' %></td>
       <td><%= t 'articles.index.edit_link' %></td>
       <td><%= t 'articles.index.delete_link' %></td>
     </tr>
@@ -16,6 +17,7 @@
         <td><%= a.created_at %></td>
         <td><%= a.updated_at %></td>
         <td><%= excerpt(a.text, '', radius: 100) %></td>
+        <td><%= a.author %></td>
       <td><%= link_to t('articles.index.edit_link'), edit_article_path(a.id) %></td>
     <td><%= link_to t('articles.index.delete_link'), article_path(a.id), method: :delete, data: {confirm: t('articles.index.delete_confirm')} %></td>
       </tr>

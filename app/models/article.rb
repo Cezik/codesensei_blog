@@ -6,6 +6,7 @@ class Article < ApplicationRecord
 
   validates :title, :text, :author, presence: true
   validates :title, length: { minimum: 5, maximum: 40 }
+  validates :author, length: { minumum: 3, maximum: 60 }
   validates :title, uniqueness: true, if: :title_changed?
   validates :terms_of_service, acceptance: true
 

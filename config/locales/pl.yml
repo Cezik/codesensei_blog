@@ -1,4 +1,11 @@
 pl:
+  simple_form:
+    "yes": 'Tak'
+    "no": 'Nie'
+    required:
+      text: 'pole wymagane'
+      mark: '*'
+
   flash:
     success: Sukces
     notice: Informacja
@@ -22,6 +29,7 @@ pl:
       edit_link: Edytuj artykuł
       delete_link: Usuń artykuł
       delete_confirm: Czy na pewno usunąć?
+      author: Autor
     create:
       success: Artykuł został utworzony.
       error: 'Nie można utworzyć artkułu: %{problems}'
@@ -68,6 +76,7 @@ pl:
       article:
         title: 'Tytuł artykułu'
         text: 'Tekst artykułu'
+        author: 'Autor:'
         terms_of_service: 'Polityka Prywatności'
       comment:
         commenter: 'Twój pseudonim:'

@@ -3,6 +3,7 @@
   <%= simple_form_for @article, url: url, wrapper: :horizontal_form do |f| %>
     <%= f.input :title, input_html: { maxlength: 40 } %>
     <%= f.input :text, hint: 'nie może zawierać tytułu', placeholder: 'Lorem ipsum...' %>
+    <%= f.input :author, input_html: { maxlength: 60 } %>
     <%= f.input :terms_of_service, as: :boolean %>
     <div class="form-group row mb-0">
       <div class="col-sm-9 offset-sm-3">
