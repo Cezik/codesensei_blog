@@ -2,7 +2,7 @@
 
   <%= simple_form_for @article, url: url, wrapper: :horizontal_form do |f| %>
     <%= f.input :title, input_html: { maxlength: 40 } %>
-    <%= f.input :text, hint: 'nie może zawierać tytułu' %>
+    <%= f.input :text, hint: 'nie może zawierać tytułu', placeholder: 'Lorem ipsum...' %>
     <div class="form-group row mb-0">
       <div class="col-sm-9 offset-sm-3">
         <%= f.button :submit, class: 'btn-success' %>

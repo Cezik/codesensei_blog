@@ -29,7 +29,7 @@ pl:
       success: Artykuł został zmieniony.
       error: 'Nie można zmienić artykułu: %{problems}'
 
-  comments:
+  comment:
     index:
       edit_link: Edytuj komentarz
       delete_link: Usuń komentarz
@@ -53,6 +53,7 @@ pl:
   activerecord:
     models:
       article: 'Artykuł'
+      comment: 'Komentarz'
     errors:
       models:
         article:
