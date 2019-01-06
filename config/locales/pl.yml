@@ -46,9 +46,10 @@ pl:
     submit:
       create: 'Utwórz %{model}'
 
-  comments:
+  comment:
     create:
       error: 'Nie można dodać komentarza: %{problems}'
+      success: 'Dodano komentarz poprawnie!'
 
   activerecord:
     models:
@@ -67,6 +68,7 @@ pl:
       article:
         title: 'Tytuł artykułu'
         text: 'Tekst artykułu'
+        terms_of_service: 'Polityka Prywatności'
       comment:
         commenter: 'Twój pseudonim:'
         body: 'Komentarz:'
