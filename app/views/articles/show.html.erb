@@ -2,6 +2,10 @@
 <% if @article.user %>
   <h3><%= t('articles.show.author', default: 'Autor') %>: <%= @article.user.email %></h3>
 <% end %>
+<%= link_to t('articles.show.gallery', default: 'Galeria'), article_picture_path(@article) %>
+<% if can?(:create, @article.pictures.new) %>
+  <%= link_to t('articles.show.new', default: 'Dodaj zdjęcia'), new_article_picture_path(@article) %>
+<% end %>
 <p>
   <%= @article.text %>
 </p>

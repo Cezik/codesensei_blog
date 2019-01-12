@@ -38,6 +38,8 @@ gem 'bootstrap-sass', '3.4.0'
 gem 'simple_form'
 gem 'devise'
 gem 'cancancan'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 # gem 'jquery-rails', '4.3.1'
 
 group :development, :test do
