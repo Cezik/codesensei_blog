@@ -20,6 +20,7 @@ pl:
       title: 'Dodaj nowy artykuł'
     show:
       index_link: 'Wróć do listy'
+      author: Autor
     index:
       title: Tytuł
       date: Data utworzenia

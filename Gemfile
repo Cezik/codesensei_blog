@@ -36,6 +36,8 @@ gem 'autoprefixer-rails'
 
 gem 'bootstrap-sass', '3.4.0'
 gem 'simple_form'
+gem 'devise'
+gem 'cancancan'
 # gem 'jquery-rails', '4.3.1'
 
 group :development, :test do
