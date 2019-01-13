@@ -1,5 +1,6 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<%= link_to t('pictures.show.back_to_article', default: 'Wróć do artykułu'), article_path(@article), class: 'btn btn-primary' %>
 <% @pictures.each do |picture| %>
-  <%= image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}" %>
+  <%= link_to article_picture_path(@article, picture) do %>
+    <%= image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}" %>
+  <% end %>
 <% end %>

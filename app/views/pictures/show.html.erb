@@ -1,2 +1,15 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<h1><%= @picture.title %></h1>
+
+<%= link_to t('pictures.show.back_to_article', default: 'Wróć do artykułu'), article_path(@article), class: 'btn btn-primary' %>
+<%= link_to t('pictures.show.edit', default: 'Edytuj'), edit_article_picture_path(@article, @picture), class: 'btn btn-primary' %>
+<%= link_to t('pictures.show.delete', default: 'Usuń'),
+            article_picture_path(@article, @picture), method: :delete,
+            data: { confirm: t('pictures.show.delete_confirm',
+            default: 'Na pewno usunąć?') }, class: 'btn btn-primary' %>
+
+<hr/>
+<p>
+  <%= image_tag(@picture.image.url, alt: @picture.description) %>
+</p>
+
+<p><%= @picture.description %></p>
