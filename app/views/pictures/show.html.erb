@@ -24,10 +24,10 @@
   </div>
 <% end %>
 
-<% @article.comments.reject(&:new_record?).each do |comment| %>
+<% @picture.comments.reject(&:new_record?).each do |comment| %>
   <div>
     <strong><%= comment.commenter %>:</strong> <%= comment.body %> &nbsp;
-    <%= link_to t('comments.index.edit_link'), edit_article_comment_path(@article.id, comment.id) %>
-    <%= link_to t('comments.index.delete_link'), article_comment_path(@article.id, comment.id), method: :delete, data: {confirm: t('comments.index.delete_confirm')} %>
+    <%= link_to t('comments.index.edit_link'), edit_article_picture_comment_path(@article.id, @picture.id, comment.id) %>
+    <%= link_to t('comments.index.delete_link'), article_picture_comment_path(@article.id, @picture.id, comment.id), method: :delete, data: {confirm: t('comments.index.delete_confirm')} %>
   </div>
 <% end %>

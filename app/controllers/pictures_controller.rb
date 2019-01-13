@@ -18,7 +18,6 @@ class PicturesController < ApplicationController
 
     if @picture.save
       redirect_to article_pictures_path
-
     else
       flash.now[:error] = t('pictures.create.error',
                         default: 'Obrazek nie mógł zostać zapisany')

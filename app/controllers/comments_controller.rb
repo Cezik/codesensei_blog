@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
         redirect_to article_path(@article.id) and return
       end
       flash[:error] = t('comments.create.error',
-      problems: @comment.errors.full_messages.to_sentence)
+                        problems: @comment.errors.full_messages.to_sentence)
 
       if @picture.present?
         render 'pictures/show'
@@ -31,7 +31,11 @@ class CommentsController < ApplicationController
 
   # GET /articles/:article_id/comments/:id/edit
   def edit
-    @comment = @article.comments.find(params[:id])
+  if params[:picture_id].present?
+    @picture = @article.pictures.find(params[:picture_id])
+  end
+
+  @comment = (@picture || @article).comments.find(params[:id])
   end
 
   # PATCH/PUT /articles/:article_id/comments/:id
@@ -43,18 +47,27 @@ class CommentsController < ApplicationController
       redirect_to article_path(@article.id)
     else
       flash.now[:error] = t('comments.update.error',
-      problems: @comment.errors.full_messages.to_sentence
-      )
+                            problems: @comment.errors.full_messages.to_sentence)
+
       render 'edit' # TODO: Poinformować,co się nie udało
     end
   end
 
   # DELETE /articles/:article_id/comments/:id
   def destroy
-    @article = Article.find(params[:article_id])
-    comment = @article.comments.find(params[:id])
-    comment.destroy
-    redirect_to article_path(@article.id)
+    # @article = Article.find(params[:article_id])
+    # @comment = @article.comments.find(params[:id])
+    if params[:picture_id].present?
+      @picture = @article.pictures.find(params[:picture_id])
+    end
+
+    @comment = (@picture || @article).comments.find(params[:id])
+    @comment.destroy
+    if @picture.present?
+      redirect_to article_picture_path(@article.id, @picture.id) and return
+    else
+      redirect_to article_path(@article.id) and return
+    end
   end
 
   private
