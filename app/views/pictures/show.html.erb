@@ -5,7 +5,7 @@
 <%= link_to t('pictures.show.delete', default: 'Usuń'),
             article_picture_path(@article, @picture), method: :delete,
             data: { confirm: t('pictures.show.delete_confirm',
-            default: 'Na pewno usunąć?') }, class: 'btn btn-primary' %>
+              default: 'Na pewno usunąć?') }, class: 'btn btn-primary' %>
 
 <hr/>
 <p>
@@ -13,3 +13,21 @@
 </p>
 
 <p><%= @picture.description %></p>
+<hr/>
+<%= simple_form_for @comment, url: article_picture_comments_path(@article.id, @picture.id), wrapper: :horizontal_form do |f| %>
+  <%= f.input :commenter %>
+  <%= f.input :body %>
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.button :submit, class: 'btn-success' %>
+    </div>
+  </div>
+<% end %>
+
+<% @article.comments.reject(&:new_record?).each do |comment| %>
+  <div>
+    <strong><%= comment.commenter %>:</strong> <%= comment.body %> &nbsp;
+    <%= link_to t('comments.index.edit_link'), edit_article_comment_path(@article.id, comment.id) %>
+    <%= link_to t('comments.index.delete_link'), article_comment_path(@article.id, comment.id), method: :delete, data: {confirm: t('comments.index.delete_confirm')} %>
+  </div>
+<% end %>

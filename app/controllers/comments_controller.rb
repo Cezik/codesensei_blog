@@ -3,15 +3,29 @@ class CommentsController < ApplicationController
   before_action :load_article
 
   def create
-    @comment = @article.comments.new(comment_params)
+    # Sprawdźmy, czy przypadkiem nie powinniśmy tworzyć tu komentarza dla
+    # obrazka, artykułu, a nie całego atykułu
+    if params[:picture_id].present?
+      @picture = @article.pictures.find(params[:picture_id])
+    end
+
+    @comment = (@picture || @article).comments.new(comment_params)
+
     if @comment.save
       flash[:success] = t('comments.create.success')
-      redirect_to article_path(@article.id)
-    else
+      if @picture.present?
+        redirect_to article_picture_path(@article.id, @picture.id) and return
+      else
+        redirect_to article_path(@article.id) and return
+      end
       flash[:error] = t('comments.create.error',
       problems: @comment.errors.full_messages.to_sentence)
 
-      render 'articles/show'
+      if @picture.present?
+        render 'pictures/show'
+      else
+        render 'articles/show'
+      end
     end
   end
 

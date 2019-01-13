@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy, as: :commentable
   has_many :pictures, dependent: :destroy
 
   before_validation :strip_html_tags, if: :text
