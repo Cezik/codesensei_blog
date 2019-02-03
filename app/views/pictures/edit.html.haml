@@ -1,0 +1,7 @@
+%h1= @picture.title
+%p
+  = link_to t('pictures.edit.back', default: 'Anuluj edycję'), article_picture_path(@article, @picture), class: 'btn btn-primary'
+= simple_form_for(@picture, url: article_picture_path(@article, @picture)) do |f|
+  = f.input :title
+  = f.input :description
+  = f.button :submit, class: 'btn btn-success'

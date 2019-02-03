@@ -1,0 +1,16 @@
+%nav.navbar.navbar-expand.navbar-dark.bg-success
+  = link_to 'Blog', root_path, class: 'navbar-brand'
+  %ul.navbar-nav
+    %li.nav-item
+      = link_to t('nav.articles', default: 'Artykuły'), articles_path, class: 'nav-link'
+    %li.nav-item
+      = link_to t('nav.new_article', default: 'Nowy artykuł'), new_article_path, class: 'nav-link'
+  %ul.navbar-nav.ml-auto
+    - if user_signed_in?
+      %p
+        Witaj,
+        %b= current_user.email
+        = link_to 'Wyloguj się', destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-info'
+    - else
+      %p Witaj!
+      = link_to 'Zaloguj się', new_user_session_path, class: 'btn btn-sm btn-info'

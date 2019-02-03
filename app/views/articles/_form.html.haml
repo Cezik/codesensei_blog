@@ -1,0 +1,8 @@
+.container
+  = simple_form_for @article, url: url, wrapper: :horizontal_form do |f|
+    = f.input :title, input_html: { maxlength: 40 }
+    = f.input :text, hint: 'nie może zawierać tytułu', placeholder: 'Lorem ipsum...'
+    = f.input :terms_of_service, as: :boolean
+    .form-group.row.mb-0
+      .col-sm-9.offset-sm-3
+        = f.button :submit, class: 'btn-success'

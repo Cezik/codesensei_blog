@@ -1,8 +1,0 @@
-<div class="container flash">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= bootstrap_flash_class(key) %>">
-      <strong><%= t "flash.#{key}" %>: </strong>
-      <%= value %>
-    </div>
-  <% end %>
-</div>

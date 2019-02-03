@@ -1,0 +1,8 @@
+= simple_form_for(@picture, url: article_pictures_path(@article.id)) do |f|
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.input :image
+  .form-actions
+    = f.button :submit, class: 'btn-success'
+= link_to t('articles.show.index_link'), article_path(@article.id), class: 'btn btn-info'

@@ -1,0 +1,28 @@
+.table-responsive
+  %table.table{:border => "1"}
+    %tr.info
+      %td ID
+      %td= t 'articles.index.title'
+      %td= t 'articles.index.date'
+      %td= t 'articles.index.update_date'
+      %td= t 'articles.index.text'
+      %td= t 'articles.index.author'
+      - if can?(:update, Article)
+        %td= t 'articles.index.edit_link'
+      - if can?(:destroy, Article)
+        %td= t 'articles.index.delete_link'
+    - @article.each do |a|
+      %tr
+        - if can?(:read, a)
+          %td= a.id
+          %td= link_to a.title, article_path(a.id)
+          %td= a.created_at
+          %td= a.updated_at
+          %td= excerpt(a.text, '', radius: 100)
+          %td= a.user.email if a.user
+          - if can?(:update, a)
+            %td= link_to t('articles.index.edit_link'), edit_article_path(a.id)
+          - if can?(:destroy, a)
+            %td= link_to t('articles.index.delete_link'), article_path(a.id), method: :delete, data: {confirm: t('articles.index.delete_confirm')}
+%br/
+= link_to t('articles.index.new_link'), new_article_path, class: 'btn btn-info'

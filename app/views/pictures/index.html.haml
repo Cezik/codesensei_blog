@@ -1,0 +1,4 @@
+= link_to t('pictures.show.back_to_article', default: 'Wróć do artykułu'), article_path(@article), class: 'btn btn-primary'
+- @pictures.each do |picture|
+  = link_to article_picture_path(@article, picture) do
+    = image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}"

@@ -42,6 +42,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'jquery-rails'
 gem 'haml'
+gem "haml-rails", "~> 1.0"
 
 group :development, :test do
   gem 'pry-byebug'
