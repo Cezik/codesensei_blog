@@ -10,24 +10,8 @@
   </head>
 
   <body>
-    <div class="flash">
-      <% flash.each do |key, value| %>
-        <div class="<%= flash_class(key) %>">
-          <strong><%= t "flash.#{key}" %>: </strong>
-          <%= value %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="navigation">
-      <% if user_signed_in? %>
-        <p>Witaj, <b><%= current_user.email %></b>
-        <%= link_to 'Wyloguj się', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <p>Witaj!</p>
-        <%= link_to 'Zaloguj się', new_user_session_path %>
-      <% end %>
-    </div>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/nav' %>
 
     <div class="container">
       <div class="row">

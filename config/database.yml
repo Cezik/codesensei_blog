@@ -58,8 +58,8 @@ development:
 test:
   <<: *default
   database: blog_test
-  # username: sensei
-  # password: sensei
+  username: sensei
+  password: sensei
   host: localhost
   port: 5432
 

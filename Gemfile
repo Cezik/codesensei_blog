@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+  source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
@@ -34,17 +34,19 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-ujs', '~> 0.1.0'
 gem 'autoprefixer-rails'
 
-gem 'bootstrap-sass', '3.4.0'
+gem 'bootstrap'
 gem 'simple_form'
 gem 'devise'
 gem 'cancancan'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
-# gem 'jquery-rails', '4.3.1'
+gem 'jquery-rails'
+gem 'haml'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -62,6 +64,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'minitest-matchers_vaccine'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
