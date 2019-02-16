@@ -42,7 +42,11 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'jquery-rails'
 gem 'haml'
-gem "haml-rails", "~> 1.0"
+gem 'haml-rails', '~> 1.0'
+gem 'babel-transpiler'
+gem 'sprockets', '~> 4.0.0.beta2'
+gem 'sidekiq'
+gem 'sidekiq-cron'
 
 group :development, :test do
   gem 'pry-byebug'
