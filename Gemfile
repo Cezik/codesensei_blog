@@ -47,6 +47,7 @@ gem 'babel-transpiler'
 gem 'sprockets', '~> 4.0.0.beta2'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'sendgrid-actionmailer'
 
 group :development, :test do
   gem 'pry-byebug'
