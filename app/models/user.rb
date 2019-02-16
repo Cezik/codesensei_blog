@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   validates :role, presence: true,
                   inclusion: { in: ['user', 'editor', 'admin'] }
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
