@@ -49,11 +49,13 @@ gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'sendgrid-actionmailer'
 gem 'omniauth-google-oauth2'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'factory_bot_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
