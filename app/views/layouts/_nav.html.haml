@@ -13,4 +13,6 @@
         = link_to 'Wyloguj się', destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-info'
     - else
       %p Witaj!
-      = link_to 'Zaloguj się', new_user_session_path, class: 'btn btn-sm btn-info'
+      = link_to 'Zaloguj się', new_user_session_path, class: 'btn btn-sm btn-info ml-1'
+      lub
+      = link_to 'Użyj konta Google', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-sm btn-info ml-1'

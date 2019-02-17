@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_13_103024) do
+ActiveRecord::Schema.define(version: 2019_02_17_113707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_01_13_103024) do
     t.string "commentable_type", default: "Article", null: false
     t.index ["commentable_id"], name: "index_comments_on_commentable_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+  end
+
+  create_table "oauth_profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "uid"
+    t.string "provider"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_oauth_profiles_on_provider_and_uid"
+    t.index ["user_id"], name: "index_oauth_profiles_on_user_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -59,5 +69,6 @@ ActiveRecord::Schema.define(version: 2019_01_13_103024) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "oauth_profiles", "users"
   add_foreign_key "pictures", "articles"
 end
