@@ -48,7 +48,6 @@ gem 'sprockets', '~> 4.0.0.beta2'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'sendgrid-actionmailer'
-gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 group :development, :test do
